@@ -10,7 +10,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: enriikke/gatsby-gh-pages-action@v2
+      - name: yarn install, build
+        run: |
+          yarn install
+          yarn run build
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          access-token: ${{ secrets.DEPLOY_SECRET }}
-          deploy-branch: gh-pages
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          cname: til.otormaigh.ie
+          publish_branch: gh-pages
