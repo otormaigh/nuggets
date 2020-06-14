@@ -2,8 +2,6 @@
 title: Update Gradle Wrapper
 tags:
   - gradle
-emoji: 💾
-link: https://gradle.com/
 ---
 
 When updating the Gradle version on a project, always run the Gradle Wrapper task to make sure all relevant files are updated. You can either add a preconfigured block within the project to set the version number, or optionally manually add the version to the gradle task params.
