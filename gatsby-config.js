@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: 'til',
-    description: 'A collection of TILs',
+    title: 'Nuggets',
+    description: 'A collection of nuggets of information',
     author: 'Elliot Tormey',
   },
   plugins: [
