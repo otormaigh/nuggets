@@ -1,0 +1,9 @@
+title: Nuggets
+timezone: Europe/Dublin
+description: >-
+  A collection of small nuggets of information.
+url: "https://nuggets.otormaigh.ie"
+github_username:  otormaigh
+
+plugins:
+  - jekyll-feed
