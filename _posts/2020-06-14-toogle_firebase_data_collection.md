@@ -1,8 +1,10 @@
 ---
+layout: post
 title: Toggle Firebase data collection
+date: 2020-06-14 19:42:00 +0100
 tags:
-  - firebase
   - android
+  - firebase
 ---
 
 You can (and should) disable Firebase on local builds. You more that likely have a debuggable build that is released in some form or other (QA) that you want to have Firebase enabled on, so that you can remotely monitor the build. Doing it in the following way will allow you to better tailor the build with the relevant settings rather and basing it off the `BuildConfig.DEBUG` flag.
@@ -11,8 +13,9 @@ The `collection_deactivated` flag will permanently disable each feature. This me
 
 The main reason to disable all of this on local debug builds is to help improve re-build performance, doing this will prevent Firebase from trying to generate whatever stuff it needs to set itself up.
 
-`app/build.gradle`
-```java
+```groovy
+app/build.gradle
+----------------
 apply plugin: 'com.google.gms.google-services'
 apply plugin: 'com.google.firebase.firebase-perf'
 apply plugin: 'com.google.firebase.crashlytics'
@@ -52,8 +55,9 @@ dependencies {
 }
 ```
 
-`AndroidManifest.xml`
-```java
+```xml
+AndroidManifest.xml
+-------------------
 <manifest>
   <application>
 
