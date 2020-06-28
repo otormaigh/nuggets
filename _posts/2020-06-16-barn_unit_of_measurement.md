@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Barn (Unit of measurement)
-date: 2020-06-16 22:24:00 +0100
+date: 2020-06-16
 tags:
   - science
   - word

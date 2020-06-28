@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Proguarding the New Way
-date: 2020-06-15 21:14:00 +0100
+date: 2020-06-16
 tags:
   - android
   - proguard
