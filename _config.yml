@@ -4,6 +4,7 @@ description: >-
   A collection of small nuggets of information.
 url: "https://nuggets.otormaigh.ie"
 github_username:  otormaigh
+permalink: /:title
 
 plugins:
   - jekyll-feed
