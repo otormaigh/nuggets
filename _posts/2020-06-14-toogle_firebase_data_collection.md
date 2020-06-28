@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Toggle Firebase data collection
-date: 2020-06-14 19:42:00 +0100
+date: 2020-06-14
 tags:
   - android
   - firebase

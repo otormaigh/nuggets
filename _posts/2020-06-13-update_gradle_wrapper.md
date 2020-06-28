@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Update Gradle Wrapper
-date: 2020-06-13 22:24:00 +0100
+date: 2020-06-13
 tags:
  - android
  - gradle
