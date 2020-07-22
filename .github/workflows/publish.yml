@@ -16,7 +16,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Install Aspell
         run: sudo apt-get install aspell aspell-en
-      - name: Check drafts
+      - name: Check ${{ matrix.directories }}
         run: OUTPUT=`cat ${{ matrix.directories }}/*.md | aspell list -d en -p ./aspell.en.pws`; if [ -n "$OUTPUT" ]; then echo $OUTPUT; exit 1; fi
 
   deploy:
