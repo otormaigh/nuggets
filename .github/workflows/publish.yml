@@ -1,15 +1,29 @@
-name: Publish
+name: Check + Publish
 
 on:
   push:
     branches:
       - master
+  pull_request:
 
 jobs:
-  deploy:
+  check:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        directories: [_posts, _drafts]
     steps:
       - uses: actions/checkout@v2
+      - name: Install Aspell
+        run: sudo apt-get install aspell aspell-en
+      - name: Check drafts
+        run: OUTPUT=`cat ${{ matrix.directories }}/*.md | aspell list -d en -p ./aspell.en.pws`; if [ -n "$OUTPUT" ]; then echo $OUTPUT; exit 1; fi
+
+  deploy:
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name != 'pull_request' }}
+    needs: check
+    steps:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
