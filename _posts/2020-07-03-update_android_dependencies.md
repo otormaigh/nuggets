@@ -15,7 +15,7 @@ This is a two stage process, you need to first be notified about a dependency up
 
 Verification is more generic, there are no requirements here, so as long as you already have some CI setup (shame on you if you don't) it'll work just fine. Once Dependabot opens a PR, you can have your CI run any checks to test and validate the update. What you do with that information is entirely yours to waste now, but at least you will have solid and early evidence on what dependencies can and can't be updated at the moment and be better able to schedule any work needed due to breaking changes.
 
-Since Dependeabot has native GitHub Actions support, to enable it on your GitHub project all you need to do is add the following (NOTE: this adds a `automerge` label and will set the target branch to `chore/dependency-update`, edit or delete those as you see fit):
+Since Dependabot has native GitHub Actions support, to enable it on your GitHub project all you need to do is add the following (NOTE: this adds a `automerge` label and will set the target branch to `chore/dependency-update`, edit or delete those as you see fit):
 
 ```
 ----------------------
