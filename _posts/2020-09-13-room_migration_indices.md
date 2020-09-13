@@ -7,7 +7,7 @@ tags:
   - room
 ---
 
-Admittedly, even at the best of times, my SQL(SQLite)-fu isn't all that great, but it's improving as time goes on. With Room, to a degree some of the raw commands are extracted away from you to help with not fully having to worry about it, but this comes with a price, and one that isn't obvious until you have the good fortune of bumping into it. One area where this raised its head for me recently was when writing a migration to update the definition of a Room `Entity`. Even though it all looked OK, the app kept on crashing and crashing, I kept going over and over the stacktrace and the migration commands to see where I was going wrong, but I couldn't figure out what was the problem.
+Admittedly, even at the best of times, my SQL(SQLite)-fu isn't all that great, but it's improving as time goes on. With Room, to a degree some of the raw commands are abstracted away from you so that you don't fully have to worry about it. But this comes with a price, and one that isn't obvious until you have the good fortune of bumping into it. One area where this raised its head for me recently was when writing a migration to update the definition of a Room `Entity`. Even though it all looked OK, the app kept on crashing and crashing, I kept going over and over the stacktrace and the migration commands to see where I was going wrong, but I couldn't figure out what was the problem.
 
 Take the following `Entity` as a starting point:
 ```kotlin
@@ -66,6 +66,6 @@ Building...Deploying...Open the app up...No crash...Hold for applause...Roll cur
 
 That was it, that's all that was missing. I'll certainly not forget to do that next time, or at least now I'll know what it means when I see that stacktrace.
 
-One other thing to note here; you might notice the name of the index that being added to the table, it appended with `index_user_` but I haven't explicitly given it that name anywhere on the `Entity` class, this is another thing hidden by Room that might catch you out, take a look at the docs [[1]] to see what's going on here.
+One other thing to note here; you might notice the name of the index that's being added to the table, it's getting appended with `index_user_` but I haven't explicitly given it that name anywhere within the `Entity` annotation or anywhere else, so where is it coming from? This is another thing that gets hidden by those handy abstractions Room that might catch you out, take a look at the docs [[1]] to see what's going on here.
 
 [1]: https://developer.android.com/reference/androidx/room#name()
