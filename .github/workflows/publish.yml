@@ -13,7 +13,7 @@ jobs:
       matrix:
         directories: [_posts, _drafts]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2.3.2
       - name: Install Aspell
         run: sudo apt-get install aspell aspell-en
       - name: Check ${{ matrix.directories }}
