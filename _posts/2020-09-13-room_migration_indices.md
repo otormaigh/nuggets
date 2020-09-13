@@ -36,12 +36,12 @@ val MIGRATION_1_2 = object : Migration(1, 2) {
         last_name TEXT NOT NULL
       )
     """)
-    datebase.execSQL("""
+    database.execSQL("""
       INSERT INTO user_backup(id, first_name, last_name)
       SELECT id, first_name, last_name FROM user
     """)
-    datebase.execSQL("DROP TABLE user")
-    datebase.execSQL("ALTER TABLE user_backup RENAME TO user")
+    database.execSQL("DROP TABLE user")
+    database.execSQL("ALTER TABLE user_backup RENAME TO user")
   }
 }
 ```
